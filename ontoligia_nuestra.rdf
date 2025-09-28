@@ -32,6 +32,14 @@
     <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#futbol -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#futbol"/>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#reglas -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#reglas">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#futbol"/>
+    </owl:Class>
 </rdf:RDF>
 
 
