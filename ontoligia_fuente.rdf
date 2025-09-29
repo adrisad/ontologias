@@ -141,7 +141,7 @@
   </owl:ObjectProperty>
 
   <!-- =========================
-       PROPIEDADES DE DATOS (Persona)
+       PROPIEDADES DE DATOS (PERSONA)
        ========================= -->
   <owl:DatatypeProperty rdf:about="#nombre">
     <rdfs:domain rdf:resource="#Persona"/>
@@ -174,7 +174,7 @@
   </owl:DatatypeProperty>
 
   <!-- =========================
-       DISJOINTNESS (consistencia)
+       DISJOINTNESS (consistencia)  
        ========================= -->
   <owl:AllDisjointClasses>
     <owl:members rdf:parseType="Collection">
