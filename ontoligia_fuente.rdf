@@ -6,42 +6,198 @@
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12"/>
-    
 
+  <owl:Ontology rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12"/>
 
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
+  <!-- =========================
+       CLASES
+       ========================= -->
+  <!-- (Ancla superior del dominio, si ya tienes futbol puedes conservarlo) -->
+  <owl:Class rdf:about="#futbol"/>
 
-    
+  <!-- Persona -->
+  <owl:Class rdf:about="#Persona">
+    <rdfs:subClassOf rdf:resource="#futbol"/>
+    <rdfs:label xml:lang="es">Persona</rdfs:label>
+    <!-- Persona es la unión disjunta de Jugador y CuerpoTecnico -->
+    <owl:disjointUnionOf rdf:parseType="Collection">
+      <rdf:Description rdf:about="#Jugador"/>
+      <rdf:Description rdf:about="#CuerpoTecnico"/>
+    </owl:disjointUnionOf>
+  </owl:Class>
 
+  <!-- Jugador y sus especializaciones (posiciones) -->
+  <owl:Class rdf:about="#Jugador">
+    <rdfs:subClassOf rdf:resource="#Persona"/>
+    <!-- Todo jugador ocupa exactamente 1 posición de PosicionJugador -->
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="#ocupaPosicion"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <owl:onClass rdf:resource="#PosicionJugador"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
 
-    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#deportista -->
+  <!-- Superclase para enumerar posiciones -->
+  <owl:Class rdf:about="#PosicionJugador"/>
 
-    <owl:Class rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#deportista">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#futbol"/>
-    </owl:Class>
-    
+  <owl:Class rdf:about="#Portero">
+    <rdfs:subClassOf rdf:resource="#Jugador"/>
+    <rdfs:subClassOf rdf:resource="#PosicionJugador"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Defensa">
+    <rdfs:subClassOf rdf:resource="#Jugador"/>
+    <rdfs:subClassOf rdf:resource="#PosicionJugador"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Centrocampista">
+    <rdfs:subClassOf rdf:resource="#Jugador"/>
+    <rdfs:subClassOf rdf:resource="#PosicionJugador"/>
+  </owl:Class>
+  <!-- La imagen pone “Defensas”; lo modelamos como otra posición distinta -->
+  <owl:Class rdf:about="#Defensas">
+    <rdfs:subClassOf rdf:resource="#Jugador"/>
+    <rdfs:subClassOf rdf:resource="#PosicionJugador"/>
+  </owl:Class>
 
+  <!-- Cuerpo Técnico y sus especializaciones -->
+  <owl:Class rdf:about="#CuerpoTecnico">
+    <rdfs:subClassOf rdf:resource="#Persona"/>
+    <!-- Restricciones: al menos 1 de cada tipo indicado en el diagrama -->
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="#compuestoPor"/>
+        <owl:someValuesFrom rdf:resource="#EntrenadorPrincipal"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="#compuestoPor"/>
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+        <owl:onClass rdf:resource="#AsistenteTecnicos"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="#compuestoPor"/>
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+        <owl:onClass rdf:resource="#Medico"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
 
-    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#futbol -->
+  <owl:Class rdf:about="#EntrenadorPrincipal">
+    <rdfs:subClassOf rdf:resource="#CuerpoTecnico"/>
+  </owl:Class>
+  <owl:Class rdf:about="#AsistenteTecnicos">
+    <rdfs:subClassOf rdf:resource="#CuerpoTecnico"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Medico">
+    <rdfs:subClassOf rdf:resource="#CuerpoTecnico"/>
+  </owl:Class>
 
-    <owl:Class rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#futbol"/>
-    
+  <!-- Ganchos a otras cajas del diagrama -->
+  <owl:Class rdf:about="#Competicion"/>
+  <owl:Class rdf:about="#Equipo"/>
 
+  <!-- =========================
+       PROPIEDADES DE OBJETO
+       ========================= -->
+  <!-- Persona -> Jugador (si decides no usar la jerarquía para “rol”, esta propiedad permite tipar rol) -->
+  <owl:ObjectProperty rdf:about="#tieneRolJugador">
+    <rdfs:domain rdf:resource="#Persona"/>
+    <rdfs:range rdf:resource="#Jugador"/>
+  </owl:ObjectProperty>
 
-    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#reglas -->
+  <!-- Persona -> CuerpoTecnico -->
+  <owl:ObjectProperty rdf:about="#tieneRolTecnico">
+    <rdfs:domain rdf:resource="#Persona"/>
+    <rdfs:range rdf:resource="#CuerpoTecnico"/>
+  </owl:ObjectProperty>
 
-    <owl:Class rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#reglas">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#futbol"/>
-    </owl:Class>
+  <!-- Jugador -> Posición -->
+  <owl:ObjectProperty rdf:about="#ocupaPosicion">
+    <rdfs:domain rdf:resource="#Jugador"/>
+    <rdfs:range rdf:resource="#PosicionJugador"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/> <!-- máx 1 posición -->
+  </owl:ObjectProperty>
+
+  <!-- CuerpoTecnico -> (EntrenadorPrincipal | AsistenteTecnicos | Medico) -->
+  <owl:ObjectProperty rdf:about="#compuestoPor">
+    <rdfs:domain rdf:resource="#CuerpoTecnico"/>
+    <rdfs:range rdf:resource="#Persona"/>
+  </owl:ObjectProperty>
+
+  <!-- Persona -> Competicion (según flecha en tu imagen) -->
+  <owl:ObjectProperty rdf:about="#participaEnCompeticion">
+    <rdfs:domain rdf:resource="#Persona"/>
+    <rdfs:range rdf:resource="#Competicion"/>
+  </owl:ObjectProperty>
+
+  <!-- (Opcional) Persona -> Equipo, si lo necesitas más adelante -->
+  <owl:ObjectProperty rdf:about="#perteneceAEquipo">
+    <rdfs:domain rdf:resource="#Persona"/>
+    <rdfs:range rdf:resource="#Equipo"/>
+  </owl:ObjectProperty>
+
+  <!-- =========================
+       PROPIEDADES DE DATOS (PERSONA)
+       ========================= -->
+  <owl:DatatypeProperty rdf:about="#nombre">
+    <rdfs:domain rdf:resource="#Persona"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="#apellido">
+    <rdfs:domain rdf:resource="#Persona"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="#documento">
+    <rdfs:domain rdf:resource="#Persona"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="#nacionalidad">
+    <rdfs:domain rdf:resource="#Persona"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="#fechaNacimiento">
+    <rdfs:domain rdf:resource="#Persona"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="#sexo">
+    <rdfs:domain rdf:resource="#Persona"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+
+  <!-- =========================
+       DISJOINTNESS (consistencia)  
+       ========================= -->
+  <owl:AllDisjointClasses>
+    <owl:members rdf:parseType="Collection">
+      <rdf:Description rdf:about="#Jugador"/>
+      <rdf:Description rdf:about="#CuerpoTecnico"/>
+    </owl:members>
+  </owl:AllDisjointClasses>
+
+  <owl:AllDisjointClasses>
+    <owl:members rdf:parseType="Collection">
+      <rdf:Description rdf:about="#Portero"/>
+      <rdf:Description rdf:about="#Defensa"/>
+      <rdf:Description rdf:about="#Centrocampista"/>
+      <rdf:Description rdf:about="#Defensas"/>
+    </owl:members>
+  </owl:AllDisjointClasses>
+
+  <owl:AllDisjointClasses>
+    <owl:members rdf:parseType="Collection">
+      <rdf:Description rdf:about="#EntrenadorPrincipal"/>
+      <rdf:Description rdf:about="#AsistenteTecnicos"/>
+      <rdf:Description rdf:about="#Medico"/>
+    </owl:members>
+  </owl:AllDisjointClasses>
+
 </rdf:RDF>
-
-
-
-<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
