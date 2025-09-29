@@ -10,39 +10,138 @@
   <owl:Ontology rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12"/>
 
   <!-- =========================
-       CLASES (según diagrama)
+       CLASES
        ========================= -->
-  <!-- FUTBOL -->
+  <!-- (Ancla superior del dominio, si ya tienes futbol puedes conservarlo) -->
   <owl:Class rdf:about="#futbol"/>
 
-  <!-- Nueva jerarquía de Persona -->
+  <!-- Persona -->
   <owl:Class rdf:about="#Persona">
     <rdfs:subClassOf rdf:resource="#futbol"/>
     <rdfs:label xml:lang="es">Persona</rdfs:label>
+    <!-- Persona es la unión disjunta de Jugador y CuerpoTecnico -->
+    <owl:disjointUnionOf rdf:parseType="Collection">
+      <rdf:Description rdf:about="#Jugador"/>
+      <rdf:Description rdf:about="#CuerpoTecnico"/>
+    </owl:disjointUnionOf>
   </owl:Class>
 
+  <!-- Jugador y sus especializaciones (posiciones) -->
   <owl:Class rdf:about="#Jugador">
     <rdfs:subClassOf rdf:resource="#Persona"/>
-    <rdfs:label xml:lang="es">Jugador</rdfs:label>
+    <!-- Todo jugador ocupa exactamente 1 posición de PosicionJugador -->
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="#ocupaPosicion"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <owl:onClass rdf:resource="#PosicionJugador"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
   </owl:Class>
 
+  <!-- Superclase para enumerar posiciones -->
+  <owl:Class rdf:about="#PosicionJugador"/>
+
+  <owl:Class rdf:about="#Portero">
+    <rdfs:subClassOf rdf:resource="#Jugador"/>
+    <rdfs:subClassOf rdf:resource="#PosicionJugador"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Defensa">
+    <rdfs:subClassOf rdf:resource="#Jugador"/>
+    <rdfs:subClassOf rdf:resource="#PosicionJugador"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Centrocampista">
+    <rdfs:subClassOf rdf:resource="#Jugador"/>
+    <rdfs:subClassOf rdf:resource="#PosicionJugador"/>
+  </owl:Class>
+  <!-- La imagen pone “Defensas”; lo modelamos como otra posición distinta -->
+  <owl:Class rdf:about="#Defensas">
+    <rdfs:subClassOf rdf:resource="#Jugador"/>
+    <rdfs:subClassOf rdf:resource="#PosicionJugador"/>
+  </owl:Class>
+
+  <!-- Cuerpo Técnico y sus especializaciones -->
   <owl:Class rdf:about="#CuerpoTecnico">
     <rdfs:subClassOf rdf:resource="#Persona"/>
-    <rdfs:label xml:lang="es">Cuerpo Técnico</rdfs:label>
+    <!-- Restricciones: al menos 1 de cada tipo indicado en el diagrama -->
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="#compuestoPor"/>
+        <owl:someValuesFrom rdf:resource="#EntrenadorPrincipal"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="#compuestoPor"/>
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+        <owl:onClass rdf:resource="#AsistenteTecnicos"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="#compuestoPor"/>
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+        <owl:onClass rdf:resource="#Medico"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
   </owl:Class>
 
   <owl:Class rdf:about="#EntrenadorPrincipal">
     <rdfs:subClassOf rdf:resource="#CuerpoTecnico"/>
   </owl:Class>
-  <owl:Class rdf:about="#AsistenteTecnico">
+  <owl:Class rdf:about="#AsistenteTecnicos">
     <rdfs:subClassOf rdf:resource="#CuerpoTecnico"/>
   </owl:Class>
   <owl:Class rdf:about="#Medico">
     <rdfs:subClassOf rdf:resource="#CuerpoTecnico"/>
   </owl:Class>
 
+  <!-- Ganchos a otras cajas del diagrama -->
+  <owl:Class rdf:about="#Competicion"/>
+  <owl:Class rdf:about="#Equipo"/>
+
   <!-- =========================
-       PROPIEDADES DE DATOS ENTIDAD PERSONAS
+       PROPIEDADES DE OBJETO
+       ========================= -->
+  <!-- Persona -> Jugador (si decides no usar la jerarquía para “rol”, esta propiedad permite tipar rol) -->
+  <owl:ObjectProperty rdf:about="#tieneRolJugador">
+    <rdfs:domain rdf:resource="#Persona"/>
+    <rdfs:range rdf:resource="#Jugador"/>
+  </owl:ObjectProperty>
+
+  <!-- Persona -> CuerpoTecnico -->
+  <owl:ObjectProperty rdf:about="#tieneRolTecnico">
+    <rdfs:domain rdf:resource="#Persona"/>
+    <rdfs:range rdf:resource="#CuerpoTecnico"/>
+  </owl:ObjectProperty>
+
+  <!-- Jugador -> Posición -->
+  <owl:ObjectProperty rdf:about="#ocupaPosicion">
+    <rdfs:domain rdf:resource="#Jugador"/>
+    <rdfs:range rdf:resource="#PosicionJugador"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/> <!-- máx 1 posición -->
+  </owl:ObjectProperty>
+
+  <!-- CuerpoTecnico -> (EntrenadorPrincipal | AsistenteTecnicos | Medico) -->
+  <owl:ObjectProperty rdf:about="#compuestoPor">
+    <rdfs:domain rdf:resource="#CuerpoTecnico"/>
+    <rdfs:range rdf:resource="#Persona"/>
+  </owl:ObjectProperty>
+
+  <!-- Persona -> Competicion (según flecha en tu imagen) -->
+  <owl:ObjectProperty rdf:about="#participaEnCompeticion">
+    <rdfs:domain rdf:resource="#Persona"/>
+    <rdfs:range rdf:resource="#Competicion"/>
+  </owl:ObjectProperty>
+
+  <!-- (Opcional) Persona -> Equipo, si lo necesitas más adelante -->
+  <owl:ObjectProperty rdf:about="#perteneceAEquipo">
+    <rdfs:domain rdf:resource="#Persona"/>
+    <rdfs:range rdf:resource="#Equipo"/>
+  </owl:ObjectProperty>
+
+  <!-- =========================
+       PROPIEDADES DE DATOS (Persona)
        ========================= -->
   <owl:DatatypeProperty rdf:about="#nombre">
     <rdfs:domain rdf:resource="#Persona"/>
@@ -74,235 +173,31 @@
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   </owl:DatatypeProperty>
 
-  <owl:DatatypeProperty rdf:about="#email">
-    <rdfs:domain rdf:resource="#Persona"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-  </owl:DatatypeProperty>
-
-  <owl:DatatypeProperty rdf:about="#telefono">
-    <rdfs:domain rdf:resource="#Persona"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-  </owl:DatatypeProperty>
-
-  <owl:DatatypeProperty rdf:about="#alturaCm">
-    <rdfs:domain rdf:resource="#Jugador"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-  </owl:DatatypeProperty>
-
-  <owl:DatatypeProperty rdf:about="#pesoKg">
-    <rdfs:domain rdf:resource="#Jugador"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-  </owl:DatatypeProperty>
-
-  <owl:DatatypeProperty rdf:about="#pieHabil">
-    <rdfs:domain rdf:resource="#Jugador"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-  </owl:DatatypeProperty>
-
   <!-- =========================
-       INDIVIDUOS (20 PERSONAS) ENTIDAD PERSONAS
+       DISJOINTNESS (consistencia)
        ========================= -->
+  <owl:AllDisjointClasses>
+    <owl:members rdf:parseType="Collection">
+      <rdf:Description rdf:about="#Jugador"/>
+      <rdf:Description rdf:about="#CuerpoTecnico"/>
+    </owl:members>
+  </owl:AllDisjointClasses>
 
-  <!-- 12 Jugadores -->
-  <owl:NamedIndividual rdf:about="#p01_Juan_Perez">
-    <rdf:type rdf:resource="#Jugador"/>
-    <nombre>Juan</nombre><apellido>Pérez</apellido>
-    <documento>JP-001</documento>
-    <nacionalidad>Boliviana</nacionalidad>
-    <fechaNacimiento>2000-03-12</fechaNacimiento>
-    <sexo>M</sexo><email>juan.perez@example.com</email><telefono>+59170000001</telefono>
-    <alturaCm rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">178</alturaCm>
-    <pesoKg rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">74.5</pesoKg>
-    <pieHabil>Derecho</pieHabil>
-  </owl:NamedIndividual>
+  <owl:AllDisjointClasses>
+    <owl:members rdf:parseType="Collection">
+      <rdf:Description rdf:about="#Portero"/>
+      <rdf:Description rdf:about="#Defensa"/>
+      <rdf:Description rdf:about="#Centrocampista"/>
+      <rdf:Description rdf:about="#Defensas"/>
+    </owl:members>
+  </owl:AllDisjointClasses>
 
-  <owl:NamedIndividual rdf:about="#p02_Marco_Suarez">
-    <rdf:type rdf:resource="#Jugador"/>
-    <nombre>Marco</nombre><apellido>Suárez</apellido>
-    <documento>MS-002</documento>
-    <nacionalidad>Boliviana</nacionalidad>
-    <fechaNacimiento>1999-07-21</fechaNacimiento>
-    <sexo>M</sexo><email>marco.suarez@example.com</email><telefono>+59170000002</telefono>
-    <alturaCm rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">181</alturaCm>
-    <pesoKg rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">77.1</pesoKg>
-    <pieHabil>Izquierdo</pieHabil>
-  </owl:NamedIndividual>
-
-  <owl:NamedIndividual rdf:about="#p03_Carlos_Flores">
-    <rdf:type rdf:resource="#Jugador"/>
-    <nombre>Carlos</nombre><apellido>Flores</apellido>
-    <documento>CF-003</documento><nacionalidad>Peruana</nacionalidad>
-    <fechaNacimiento>2001-01-05</fechaNacimiento><sexo>M</sexo>
-    <email>carlos.flores@example.com</email><telefono>+59170000003</telefono>
-    <alturaCm rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">175</alturaCm>
-    <pesoKg rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">70.2</pesoKg>
-    <pieHabil>Derecho</pieHabil>
-  </owl:NamedIndividual>
-
-  <owl:NamedIndividual rdf:about="#p04_Luis_Rojas">
-    <rdf:type rdf:resource="#Jugador"/>
-    <nombre>Luis</nombre><apellido>Rojas</apellido>
-    <documento>LR-004</documento><nacionalidad>Boliviana</nacionalidad>
-    <fechaNacimiento>2002-04-30</fechaNacimiento><sexo>M</sexo>
-    <email>luis.rojas@example.com</email><telefono>+59170000004</telefono>
-    <alturaCm rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">183</alturaCm>
-    <pesoKg rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">80.0</pesoKg>
-    <pieHabil>Derecho</pieHabil>
-  </owl:NamedIndividual>
-
-  <owl:NamedIndividual rdf:about="#p05_Diego_Mamani">
-    <rdf:type rdf:resource="#Jugador"/>
-    <nombre>Diego</nombre><apellido>Mamani</apellido>
-    <documento>DM-005</documento><nacionalidad>Boliviana</nacionalidad>
-    <fechaNacimiento>2000-10-11</fechaNacimiento><sexo>M</sexo>
-    <email>diego.mamani@example.com</email><telefono>+59170000005</telefono>
-    <alturaCm rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">176</alturaCm>
-    <pesoKg rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">72.9</pesoKg>
-    <pieHabil>Izquierdo</pieHabil>
-  </owl:NamedIndividual>
-
-  <owl:NamedIndividual rdf:about="#p06_Fernando_Quispe">
-    <rdf:type rdf:resource="#Jugador"/>
-    <nombre>Fernando</nombre><apellido>Quispe</apellido>
-    <documento>FQ-006</documento><nacionalidad>Boliviana</nacionalidad>
-    <fechaNacimiento>1998-06-09</fechaNacimiento><sexo>M</sexo>
-    <email>fernando.quispe@example.com</email><telefono>+59170000006</telefono>
-    <alturaCm rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">172</alturaCm>
-    <pesoKg rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">68.3</pesoKg>
-    <pieHabil>Derecho</pieHabil>
-  </owl:NamedIndividual>
-
-  <owl:NamedIndividual rdf:about="#p07_Alejandro_Medina">
-    <rdf:type rdf:resource="#Jugador"/>
-    <nombre>Alejandro</nombre><apellido>Medina</apellido>
-    <documento>AM-007</documento><nacionalidad>Argentina</nacionalidad>
-    <fechaNacimiento>2001-12-18</fechaNacimiento><sexo>M</sexo>
-    <email>alejandro.medina@example.com</email><telefono>+59170000007</telefono>
-    <alturaCm rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">179</alturaCm>
-    <pesoKg rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">73.0</pesoKg>
-    <pieHabil>Derecho</pieHabil>
-  </owl:NamedIndividual>
-
-  <owl:NamedIndividual rdf:about="#p08_Sergio_Lopez">
-    <rdf:type rdf:resource="#Jugador"/>
-    <nombre>Sergio</nombre><apellido>López</apellido>
-    <documento>SL-008</documento><nacionalidad>Boliviana</nacionalidad>
-    <fechaNacimiento>1999-02-24</fechaNacimiento><sexo>M</sexo>
-    <email>sergio.lopez@example.com</email><telefono>+59170000008</telefono>
-    <alturaCm rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">185</alturaCm>
-    <pesoKg rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">82.4</pesoKg>
-    <pieHabil>Izquierdo</pieHabil>
-  </owl:NamedIndividual>
-
-  <owl:NamedIndividual rdf:about="#p09_Ricardo_Vargas">
-    <rdf:type rdf:resource="#Jugador"/>
-    <nombre>Ricardo</nombre><apellido>Vargas</apellido>
-    <documento>RV-009</documento><nacionalidad>Boliviana</nacionalidad>
-    <fechaNacimiento>2003-08-15</fechaNacimiento><sexo>M</sexo>
-    <email>ricardo.vargas@example.com</email><telefono>+59170000009</telefono>
-    <alturaCm rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">171</alturaCm>
-    <pesoKg rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">66.0</pesoKg>
-    <pieHabil>Derecho</pieHabil>
-  </owl:NamedIndividual>
-
-  <owl:NamedIndividual rdf:about="#p10_Bruno_Gutierrez">
-    <rdf:type rdf:resource="#Jugador"/>
-    <nombre>Bruno</nombre><apellido>Gutiérrez</apellido>
-    <documento>BG-010</documento><nacionalidad>Uruguaya</nacionalidad>
-    <fechaNacimiento>1997-05-07</fechaNacimiento><sexo>M</sexo>
-    <email>bruno.gutierrez@example.com</email><telefono>+59170000010</telefono>
-    <alturaCm rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">180</alturaCm>
-    <pesoKg rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">79.2</pesoKg>
-    <pieHabil>Derecho</pieHabil>
-  </owl:NamedIndividual>
-
-  <owl:NamedIndividual rdf:about="#p11_Mateo_Paredes">
-    <rdf:type rdf:resource="#Jugador"/>
-    <nombre>Mateo</nombre><apellido>Paredes</apellido>
-    <documento>MP-011</documento><nacionalidad>Boliviana</nacionalidad>
-    <fechaNacimiento>2000-09-29</fechaNacimiento><sexo>M</sexo>
-    <email>mateo.paredes@example.com</email><telefono>+59170000011</telefono>
-    <alturaCm rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">177</alturaCm>
-    <pesoKg rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">71.8</pesoKg>
-    <pieHabil>Derecho</pieHabil>
-  </owl:NamedIndividual>
-
-  <owl:NamedIndividual rdf:about="#p12_Andres_Torrez">
-    <rdf:type rdf:resource="#Jugador"/>
-    <nombre>Andrés</nombre><apellido>Tórrez</apellido>
-    <documento>AT-012</documento><nacionalidad>Boliviana</nacionalidad>
-    <fechaNacimiento>1998-11-03</fechaNacimiento><sexo>M</sexo>
-    <email>andres.torrez@example.com</email><telefono>+59170000012</telefono>
-    <alturaCm rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">174</alturaCm>
-    <pesoKg rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">69.7</pesoKg>
-    <pieHabil>Izquierdo</pieHabil>
-  </owl:NamedIndividual>
-
-  <!-- 8 del Cuerpo Técnico -->
-  <owl:NamedIndividual rdf:about="#p13_Ramiro_Salas">
-    <rdf:type rdf:resource="#EntrenadorPrincipal"/>
-    <nombre>Ramiro</nombre><apellido>Salas</apellido>
-    <documento>RS-013</documento><nacionalidad>Boliviana</nacionalidad>
-    <fechaNacimiento>1975-01-14</fechaNacimiento><sexo>M</sexo>
-    <email>ramiro.salas@example.com</email><telefono>+59170000013</telefono>
-  </owl:NamedIndividual>
-
-  <owl:NamedIndividual rdf:about="#p14_Gabriela_Arias">
-    <rdf:type rdf:resource="#AsistenteTecnico"/>
-    <nombre>Gabriela</nombre><apellido>Arias</apellido>
-    <documento>GA-014</documento><nacionalidad>Boliviana</nacionalidad>
-    <fechaNacimiento>1985-04-02</fechaNacimiento><sexo>F</sexo>
-    <email>gabriela.arias@example.com</email><telefono>+59170000014</telefono>
-  </owl:NamedIndividual>
-
-  <owl:NamedIndividual rdf:about="#p15_Jorge_Mercado">
-    <rdf:type rdf:resource="#AsistenteTecnico"/>
-    <nombre>Jorge</nombre><apellido>Mercado</apellido>
-    <documento>JM-015</documento><nacionalidad>Boliviana</nacionalidad>
-    <fechaNacimiento>1982-06-22</fechaNacimiento><sexo>M</sexo>
-    <email>jorge.mercado@example.com</email><telefono>+59170000015</telefono>
-  </owl:NamedIndividual>
-
-  <owl:NamedIndividual rdf:about="#p16_Carla_Medina">
-    <rdf:type rdf:resource="#Medico"/>
-    <nombre>Carla</nombre><apellido>Medina</apellido>
-    <documento>CM-016</documento><nacionalidad>Boliviana</nacionalidad>
-    <fechaNacimiento>1987-10-10</fechaNacimiento><sexo>F</sexo>
-    <email>carla.medina@example.com</email><telefono>+59170000016</telefono>
-  </owl:NamedIndividual>
-
-  <owl:NamedIndividual rdf:about="#p17_Raul_Ortega">
-    <rdf:type rdf:resource="#Medico"/>
-    <nombre>Raúl</nombre><apellido>Ortega</apellido>
-    <documento>RO-017</documento><nacionalidad>Paraguaya</nacionalidad>
-    <fechaNacimiento>1979-03-03</fechaNacimiento><sexo>M</sexo>
-    <email>raul.ortega@example.com</email><telefono>+59170000017</telefono>
-  </owl:NamedIndividual>
-
-  <owl:NamedIndividual rdf:about="#p18_Lucia_Fernandez">
-    <rdf:type rdf:resource="#AsistenteTecnico"/>
-    <nombre>Lucía</nombre><apellido>Fernández</apellido>
-    <documento>LF-018</documento><nacionalidad>Argentina</nacionalidad>
-    <fechaNacimiento>1990-12-01</fechaNacimiento><sexo>F</sexo>
-    <email>lucia.fernandez@example.com</email><telefono>+59170000018</telefono>
-  </owl:NamedIndividual>
-
-  <owl:NamedIndividual rdf:about="#p19_Mario_SantaCruz">
-    <rdf:type rdf:resource="#EntrenadorPrincipal"/>
-    <nombre>Mario</nombre><apellido>Santa Cruz</apellido>
-    <documento>MSC-019</documento><nacionalidad>Boliviana</nacionalidad>
-    <fechaNacimiento>1972-08-17</fechaNacimiento><sexo>M</sexo>
-    <email>mario.santacruz@example.com</email><telefono>+59170000019</telefono>
-  </owl:NamedIndividual>
-
-  <owl:NamedIndividual rdf:about="#p20_Sofia_Rivero">
-    <rdf:type rdf:resource="#AsistenteTecnico"/>
-    <nombre>Sofía</nombre><apellido>Rivero</apellido>
-    <documento>SR-020</documento><nacionalidad>Boliviana</nacionalidad>
-    <fechaNacimiento>1991-09-25</fechaNacimiento><sexo>F</sexo>
-    <email>sofia.rivero@example.com</email><telefono>+59170000020</telefono>
-  </owl:NamedIndividual>
+  <owl:AllDisjointClasses>
+    <owl:members rdf:parseType="Collection">
+      <rdf:Description rdf:about="#EntrenadorPrincipal"/>
+      <rdf:Description rdf:about="#AsistenteTecnicos"/>
+      <rdf:Description rdf:about="#Medico"/>
+    </owl:members>
+  </owl:AllDisjointClasses>
 
 </rdf:RDF>
-
-
