@@ -200,10 +200,66 @@
     
 
 
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Club -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Club">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#Equipo"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#ClubDePrimera -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#ClubDePrimera">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Club"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#ClubDeSegunda -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#ClubDeSegunda">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Club"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#ClubJuvenil -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#ClubJuvenil">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Club"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Comebol -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Comebol">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Seleccion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Juvenil -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Juvenil">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Seleccion"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Pais -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Pais">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#futbol"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Seleccion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Seleccion">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#Equipo"/>
     </owl:Class>
     
 
@@ -220,6 +276,14 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#pais">
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#sub20 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#sub20">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Seleccion"/>
     </owl:Class>
     
 
