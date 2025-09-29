@@ -1,0 +1,162 @@
+@prefix : <http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+#################################################################
+# Clases
+#################################################################
+
+:Regla a owl:Class ;
+  rdfs:label "Regla"@es ;
+  rdfs:comment "Clase padre de todas las reglas del dominio fútbol."@es .
+
+:ReglaJuego a owl:Class ; rdfs:subClassOf :Regla ; rdfs:label "Regla de Juego"@es .
+:ReglaArbitraje a owl:Class ; rdfs:subClassOf :Regla ; rdfs:label "Regla de Arbitraje"@es .
+:ReglaDisciplinaria a owl:Class ; rdfs:subClassOf :Regla ; rdfs:label "Regla Disciplinaria"@es .
+:ReglaEquipamiento a owl:Class ; rdfs:subClassOf :Regla ; rdfs:label "Regla de Equipamiento"@es .
+:ReglaTerreno a owl:Class ; rdfs:subClassOf :Regla ; rdfs:label "Regla de Terreno"@es .
+
+:Federacion a owl:Class .
+:Competicion a owl:Class .
+:TipoSuperficie a owl:Class .
+:Balon a owl:Class .
+
+#################################################################
+# Data properties
+#################################################################
+
+:descripcionRegla a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:domain :Regla ;
+  rdfs:range xsd:string .
+
+:codigoRegla a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:domain :Regla ;
+  rdfs:range xsd:string .
+
+:vigencia a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:domain :Regla ;
+  rdfs:range xsd:date .
+
+# Específicas
+:duracionPartido a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:domain :ReglaJuego ;
+  rdfs:range xsd:integer .
+
+:tieneTiempoExtra a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:domain :ReglaJuego ;
+  rdfs:range xsd:boolean .
+
+:minimoPartidosSancion a owl:DatatypeProperty ;
+  rdfs:domain :ReglaDisciplinaria ;
+  rdfs:range xsd:integer .
+
+:largoCampo a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:domain :ReglaTerreno ;
+  rdfs:range xsd:integer .
+
+:anchoCampo a owl:DatatypeProperty , owl:FunctionalProperty ;
+  rdfs:domain :ReglaTerreno ;
+  rdfs:range xsd:integer .
+
+#################################################################
+# Object properties
+#################################################################
+
+:reguladoPor a owl:ObjectProperty ;
+  rdfs:domain :Regla ;
+  rdfs:range :Federacion .
+
+:perteneceA a owl:ObjectProperty ;
+  rdfs:domain :Regla ;
+  rdfs:range :Competicion .
+
+:usaSuperficie a owl:ObjectProperty ;
+  rdfs:domain :ReglaTerreno ;
+  rdfs:range :TipoSuperficie .
+
+:usaBalon a owl:ObjectProperty ;
+  rdfs:domain :ReglaEquipamiento ;
+  rdfs:range :Balon .
+
+#################################################################
+# Restricciones
+#################################################################
+
+:Regla rdfs:subClassOf
+    [ a owl:Restriction ; owl:onProperty :descripcionRegla ; owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onDataRange xsd:string ],
+    [ a owl:Restriction ; owl:onProperty :codigoRegla ; owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onDataRange xsd:string ],
+    [ a owl:Restriction ; owl:onProperty :reguladoPor ; owl:someValuesFrom :Federacion ],
+    [ a owl:Restriction ; owl:onProperty :perteneceA ; owl:someValuesFrom :Competicion ] .
+
+:ReglaJuego rdfs:subClassOf
+    [ a owl:Restriction ; owl:onProperty :duracionPartido ; owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onDataRange xsd:integer ],
+    [ a owl:Restriction ; owl:onProperty :tieneTiempoExtra ; owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onDataRange xsd:boolean ] .
+
+:ReglaTerreno rdfs:subClassOf
+    [ a owl:Restriction ; owl:onProperty :largoCampo ; owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onDataRange xsd:integer ],
+    [ a owl:Restriction ; owl:onProperty :anchoCampo ; owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onDataRange xsd:integer ],
+    [ a owl:Restriction ; owl:onProperty :usaSuperficie ; owl:someValuesFrom :TipoSuperficie ] .
+
+:ReglaDisciplinaria rdfs:subClassOf
+    [ a owl:Restriction ; owl:onProperty :minimoPartidosSancion ; owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ; owl:onDataRange xsd:integer ] .
+
+:ReglaEquipamiento rdfs:subClassOf
+    [ a owl:Restriction ; owl:onProperty :usaBalon ; owl:someValuesFrom :Balon ] .
+
+#################################################################
+# Individuos auxiliares
+#################################################################
+
+:FIFA a :Federacion .
+:CONMEBOL a :Federacion .
+:MundialFIFA a :Competicion .
+:CopaLibertadores a :Competicion .
+:CespedNatural a :TipoSuperficie .
+:BalonTamano5 a :Balon .
+
+#################################################################
+# Ejemplos de instancias
+#################################################################
+
+:ReglaJuego_90min a :ReglaJuego ;
+  :descripcionRegla "Duración de 90 minutos más tiempo extra."@es ;
+  :codigoRegla "RJ-01" ;
+  :vigencia "2025-01-01"^^xsd:date ;
+  :duracionPartido 90 ;
+  :tieneTiempoExtra true ;
+  :reguladoPor :FIFA ;
+  :perteneceA :MundialFIFA .
+
+:ReglaTerreno_Estandar a :ReglaTerreno ;
+  :descripcionRegla "El terreno mide 105x68 metros con césped natural."@es ;
+  :codigoRegla "RT-01" ;
+  :vigencia "2025-01-01"^^xsd:date ;
+  :largoCampo 105 ;
+  :anchoCampo 68 ;
+  :usaSuperficie :CespedNatural ;
+  :reguladoPor :FIFA ;
+  :perteneceA :MundialFIFA .
+
+:ReglaDisciplinaria_TarjetaRoja a :ReglaDisciplinaria ;
+  :descripcionRegla "Un jugador expulsado recibe sanción mínima de 1 partido."@es ;
+  :codigoRegla "RD-01" ;
+  :vigencia "2025-01-01"^^xsd:date ;
+  :minimoPartidosSancion 1 ;
+  :reguladoPor :CONMEBOL ;
+  :perteneceA :CopaLibertadores .
+
+:ReglaEquipamiento_Balon5 a :ReglaEquipamiento ;
+  :descripcionRegla "El balón oficial es número 5."@es ;
+  :codigoRegla "RE-01" ;
+  :vigencia "2025-01-01"^^xsd:date ;
+  :usaBalon :BalonTamano5 ;
+  :reguladoPor :FIFA ;
+  :perteneceA :MundialFIFA .
+
+:ReglaArbitraje_Var a :ReglaArbitraje ;
+  :descripcionRegla "Uso obligatorio del VAR en goles y penales."@es ;
+  :codigoRegla "RA-01" ;
+  :vigencia "2024-07-01"^^xsd:date ;
+  :reguladoPor :CONMEBOL ;
+  :perteneceA :CopaLibertadores .
