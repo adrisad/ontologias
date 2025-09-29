@@ -1,0 +1,881 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/"
+     xml:base="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:untitled-ontology-12="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/alturaCm -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/alturaCm"/>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/apellido -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/apellido"/>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/documento -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/documento"/>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/email -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/email"/>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/fechaNacimiento -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/fechaNacimiento"/>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/nacionalidad -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/nacionalidad"/>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/nombre -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/nombre"/>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/pesoKg -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/pesoKg"/>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/pieHabil -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/pieHabil"/>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/sexo -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/sexo"/>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/telefono -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/telefono"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#tieneCampo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#tieneCampo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Infraestructura"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Campo_de_Juego"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#tieneEquipamiento -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#tieneEquipamiento">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Infraestructura"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Equipamento"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#tieneEstadio -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#tieneEstadio">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Infraestructura"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Estadio"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#tieneServicio -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#tieneServicio">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Infraestructura"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Servicios"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#anioInauguracion -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#anioInauguracion">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Estadio"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#cantidad -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#cantidad">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Equipamento"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#capacidad -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#capacidad">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Estadio"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#dimensiones -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#dimensiones">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Campo_de_Juego"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#nombreInfraestructura -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#nombreInfraestructura">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Infraestructura"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#tipoCesped -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#tipoCesped">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Campo_de_Juego"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#tipoEquipamiento -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#tipoEquipamiento">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Equipamento"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#tipoServicio -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#tipoServicio">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Servicios"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#ubicacion -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#ubicacion">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Infraestructura"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#alturaCm -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#alturaCm">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#Jugador"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#apellido -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#apellido">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#Persona"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#documento -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#documento">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#Persona"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#email -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#email">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#Persona"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#fechaNacimiento -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#fechaNacimiento">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#Persona"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#nacionalidad -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#nacionalidad">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#Persona"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#nombre -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#nombre">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#Persona"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#pesoKg -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#pesoKg">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#Jugador"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#pieHabil -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#pieHabil">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#Jugador"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#sexo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#sexo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#Persona"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#telefono -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#telefono">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#Persona"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Campo_de_Juego -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Campo_de_Juego">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Infraestructura"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Equipamento -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Equipamento">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Infraestructura"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Estadio -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Estadio">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Infraestructura"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Infraestructura -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Infraestructura">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#futbol"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Servicios -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Servicios">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Infraestructura"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#AsistenteTecnico -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#AsistenteTecnico">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#CuerpoTecnico"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#CuerpoTecnico -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#CuerpoTecnico">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#Persona"/>
+        <rdfs:label xml:lang="es">Cuerpo Técnico</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#EntrenadorPrincipal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#EntrenadorPrincipal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#CuerpoTecnico"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#Jugador -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#Jugador">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#Persona"/>
+        <rdfs:label xml:lang="es">Jugador</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#Medico -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#Medico">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#CuerpoTecnico"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#Persona -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#Persona">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#futbol"/>
+        <rdfs:label xml:lang="es">Persona</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#futbol -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#futbol"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Barcelona_Estadio -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Barcelona_Estadio">
+        <untitled-ontology-12:capacidad rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">500000</untitled-ontology-12:capacidad>
+        <untitled-ontology-12:nombreInfraestructura>Cap Nou</untitled-ontology-12:nombreInfraestructura>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Hernando_Siles -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Hernando_Siles">
+        <rdf:type rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Estadio"/>
+        <untitled-ontology-12:capacidad rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">42000</untitled-ontology-12:capacidad>
+        <untitled-ontology-12:nombreInfraestructura>Herando Siles</untitled-ontology-12:nombreInfraestructura>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Real_Madrid_Estadio -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Real_Madrid_Estadio">
+        <untitled-ontology-12:capacidad rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">650000</untitled-ontology-12:capacidad>
+        <untitled-ontology-12:nombreInfraestructura>Bernabeu</untitled-ontology-12:nombreInfraestructura>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#p01_Juan_Perez -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#p01_Juan_Perez">
+        <rdf:type rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#Jugador"/>
+        <alturaCm rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">178</alturaCm>
+        <apellido>Pérez</apellido>
+        <documento>JP-001</documento>
+        <email>juan.perez@example.com</email>
+        <fechaNacimiento>2000-03-12</fechaNacimiento>
+        <nacionalidad>Boliviana</nacionalidad>
+        <nombre>Juan</nombre>
+        <pesoKg rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">74.5</pesoKg>
+        <pieHabil>Derecho</pieHabil>
+        <sexo>M</sexo>
+        <telefono>+59170000001</telefono>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#p02_Marco_Suarez -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#p02_Marco_Suarez">
+        <rdf:type rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#Jugador"/>
+        <alturaCm rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">181</alturaCm>
+        <apellido>Suárez</apellido>
+        <documento>MS-002</documento>
+        <email>marco.suarez@example.com</email>
+        <fechaNacimiento>1999-07-21</fechaNacimiento>
+        <nacionalidad>Boliviana</nacionalidad>
+        <nombre>Marco</nombre>
+        <pesoKg rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">77.1</pesoKg>
+        <pieHabil>Izquierdo</pieHabil>
+        <sexo>M</sexo>
+        <telefono>+59170000002</telefono>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#p03_Carlos_Flores -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#p03_Carlos_Flores">
+        <rdf:type rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#Jugador"/>
+        <alturaCm rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">175</alturaCm>
+        <apellido>Flores</apellido>
+        <documento>CF-003</documento>
+        <email>carlos.flores@example.com</email>
+        <fechaNacimiento>2001-01-05</fechaNacimiento>
+        <nacionalidad>Peruana</nacionalidad>
+        <nombre>Carlos</nombre>
+        <pesoKg rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">70.2</pesoKg>
+        <pieHabil>Derecho</pieHabil>
+        <sexo>M</sexo>
+        <telefono>+59170000003</telefono>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#p04_Luis_Rojas -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#p04_Luis_Rojas">
+        <rdf:type rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#Jugador"/>
+        <alturaCm rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">183</alturaCm>
+        <apellido>Rojas</apellido>
+        <documento>LR-004</documento>
+        <email>luis.rojas@example.com</email>
+        <fechaNacimiento>2002-04-30</fechaNacimiento>
+        <nacionalidad>Boliviana</nacionalidad>
+        <nombre>Luis</nombre>
+        <pesoKg rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">80.0</pesoKg>
+        <pieHabil>Derecho</pieHabil>
+        <sexo>M</sexo>
+        <telefono>+59170000004</telefono>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#p05_Diego_Mamani -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#p05_Diego_Mamani">
+        <rdf:type rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#Jugador"/>
+        <alturaCm rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">176</alturaCm>
+        <apellido>Mamani</apellido>
+        <documento>DM-005</documento>
+        <email>diego.mamani@example.com</email>
+        <fechaNacimiento>2000-10-11</fechaNacimiento>
+        <nacionalidad>Boliviana</nacionalidad>
+        <nombre>Diego</nombre>
+        <pesoKg rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">72.9</pesoKg>
+        <pieHabil>Izquierdo</pieHabil>
+        <sexo>M</sexo>
+        <telefono>+59170000005</telefono>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#p06_Fernando_Quispe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#p06_Fernando_Quispe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#Jugador"/>
+        <alturaCm rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">172</alturaCm>
+        <apellido>Quispe</apellido>
+        <documento>FQ-006</documento>
+        <email>fernando.quispe@example.com</email>
+        <fechaNacimiento>1998-06-09</fechaNacimiento>
+        <nacionalidad>Boliviana</nacionalidad>
+        <nombre>Fernando</nombre>
+        <pesoKg rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">68.3</pesoKg>
+        <pieHabil>Derecho</pieHabil>
+        <sexo>M</sexo>
+        <telefono>+59170000006</telefono>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#p07_Alejandro_Medina -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#p07_Alejandro_Medina">
+        <rdf:type rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#Jugador"/>
+        <alturaCm rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">179</alturaCm>
+        <apellido>Medina</apellido>
+        <documento>AM-007</documento>
+        <email>alejandro.medina@example.com</email>
+        <fechaNacimiento>2001-12-18</fechaNacimiento>
+        <nacionalidad>Argentina</nacionalidad>
+        <nombre>Alejandro</nombre>
+        <pesoKg rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">73.0</pesoKg>
+        <pieHabil>Derecho</pieHabil>
+        <sexo>M</sexo>
+        <telefono>+59170000007</telefono>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#p08_Sergio_Lopez -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#p08_Sergio_Lopez">
+        <rdf:type rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#Jugador"/>
+        <alturaCm rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">185</alturaCm>
+        <apellido>López</apellido>
+        <documento>SL-008</documento>
+        <email>sergio.lopez@example.com</email>
+        <fechaNacimiento>1999-02-24</fechaNacimiento>
+        <nacionalidad>Boliviana</nacionalidad>
+        <nombre>Sergio</nombre>
+        <pesoKg rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">82.4</pesoKg>
+        <pieHabil>Izquierdo</pieHabil>
+        <sexo>M</sexo>
+        <telefono>+59170000008</telefono>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#p09_Ricardo_Vargas -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#p09_Ricardo_Vargas">
+        <rdf:type rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#Jugador"/>
+        <alturaCm rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">171</alturaCm>
+        <apellido>Vargas</apellido>
+        <documento>RV-009</documento>
+        <email>ricardo.vargas@example.com</email>
+        <fechaNacimiento>2003-08-15</fechaNacimiento>
+        <nacionalidad>Boliviana</nacionalidad>
+        <nombre>Ricardo</nombre>
+        <pesoKg rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">66.0</pesoKg>
+        <pieHabil>Derecho</pieHabil>
+        <sexo>M</sexo>
+        <telefono>+59170000009</telefono>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#p10_Bruno_Gutierrez -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#p10_Bruno_Gutierrez">
+        <rdf:type rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#Jugador"/>
+        <alturaCm rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">180</alturaCm>
+        <apellido>Gutiérrez</apellido>
+        <documento>BG-010</documento>
+        <email>bruno.gutierrez@example.com</email>
+        <fechaNacimiento>1997-05-07</fechaNacimiento>
+        <nacionalidad>Uruguaya</nacionalidad>
+        <nombre>Bruno</nombre>
+        <pesoKg rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">79.2</pesoKg>
+        <pieHabil>Derecho</pieHabil>
+        <sexo>M</sexo>
+        <telefono>+59170000010</telefono>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#p11_Mateo_Paredes -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#p11_Mateo_Paredes">
+        <rdf:type rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#Jugador"/>
+        <alturaCm rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">177</alturaCm>
+        <apellido>Paredes</apellido>
+        <documento>MP-011</documento>
+        <email>mateo.paredes@example.com</email>
+        <fechaNacimiento>2000-09-29</fechaNacimiento>
+        <nacionalidad>Boliviana</nacionalidad>
+        <nombre>Mateo</nombre>
+        <pesoKg rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">71.8</pesoKg>
+        <pieHabil>Derecho</pieHabil>
+        <sexo>M</sexo>
+        <telefono>+59170000011</telefono>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#p12_Andres_Torrez -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#p12_Andres_Torrez">
+        <rdf:type rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#Jugador"/>
+        <alturaCm rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">174</alturaCm>
+        <apellido>Tórrez</apellido>
+        <documento>AT-012</documento>
+        <email>andres.torrez@example.com</email>
+        <fechaNacimiento>1998-11-03</fechaNacimiento>
+        <nacionalidad>Boliviana</nacionalidad>
+        <nombre>Andrés</nombre>
+        <pesoKg rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">69.7</pesoKg>
+        <pieHabil>Izquierdo</pieHabil>
+        <sexo>M</sexo>
+        <telefono>+59170000012</telefono>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#p13_Ramiro_Salas -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#p13_Ramiro_Salas">
+        <rdf:type rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#EntrenadorPrincipal"/>
+        <apellido>Salas</apellido>
+        <documento>RS-013</documento>
+        <email>ramiro.salas@example.com</email>
+        <fechaNacimiento>1975-01-14</fechaNacimiento>
+        <nacionalidad>Boliviana</nacionalidad>
+        <nombre>Ramiro</nombre>
+        <sexo>M</sexo>
+        <telefono>+59170000013</telefono>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#p14_Gabriela_Arias -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#p14_Gabriela_Arias">
+        <rdf:type rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#AsistenteTecnico"/>
+        <apellido>Arias</apellido>
+        <documento>GA-014</documento>
+        <email>gabriela.arias@example.com</email>
+        <fechaNacimiento>1985-04-02</fechaNacimiento>
+        <nacionalidad>Boliviana</nacionalidad>
+        <nombre>Gabriela</nombre>
+        <sexo>F</sexo>
+        <telefono>+59170000014</telefono>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#p15_Jorge_Mercado -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#p15_Jorge_Mercado">
+        <rdf:type rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#AsistenteTecnico"/>
+        <apellido>Mercado</apellido>
+        <documento>JM-015</documento>
+        <email>jorge.mercado@example.com</email>
+        <fechaNacimiento>1982-06-22</fechaNacimiento>
+        <nacionalidad>Boliviana</nacionalidad>
+        <nombre>Jorge</nombre>
+        <sexo>M</sexo>
+        <telefono>+59170000015</telefono>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#p16_Carla_Medina -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#p16_Carla_Medina">
+        <rdf:type rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#Medico"/>
+        <apellido>Medina</apellido>
+        <documento>CM-016</documento>
+        <email>carla.medina@example.com</email>
+        <fechaNacimiento>1987-10-10</fechaNacimiento>
+        <nacionalidad>Boliviana</nacionalidad>
+        <nombre>Carla</nombre>
+        <sexo>F</sexo>
+        <telefono>+59170000016</telefono>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#p17_Raul_Ortega -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#p17_Raul_Ortega">
+        <rdf:type rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#Medico"/>
+        <apellido>Ortega</apellido>
+        <documento>RO-017</documento>
+        <email>raul.ortega@example.com</email>
+        <fechaNacimiento>1979-03-03</fechaNacimiento>
+        <nacionalidad>Paraguaya</nacionalidad>
+        <nombre>Raúl</nombre>
+        <sexo>M</sexo>
+        <telefono>+59170000017</telefono>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#p18_Lucia_Fernandez -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#p18_Lucia_Fernandez">
+        <rdf:type rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#AsistenteTecnico"/>
+        <apellido>Fernández</apellido>
+        <documento>LF-018</documento>
+        <email>lucia.fernandez@example.com</email>
+        <fechaNacimiento>1990-12-01</fechaNacimiento>
+        <nacionalidad>Argentina</nacionalidad>
+        <nombre>Lucía</nombre>
+        <sexo>F</sexo>
+        <telefono>+59170000018</telefono>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#p19_Mario_SantaCruz -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#p19_Mario_SantaCruz">
+        <rdf:type rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#EntrenadorPrincipal"/>
+        <apellido>Santa Cruz</apellido>
+        <documento>MSC-019</documento>
+        <email>mario.santacruz@example.com</email>
+        <fechaNacimiento>1972-08-17</fechaNacimiento>
+        <nacionalidad>Boliviana</nacionalidad>
+        <nombre>Mario</nombre>
+        <sexo>M</sexo>
+        <telefono>+59170000019</telefono>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#p20_Sofia_Rivero -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#p20_Sofia_Rivero">
+        <rdf:type rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#AsistenteTecnico"/>
+        <apellido>Rivero</apellido>
+        <documento>SR-020</documento>
+        <email>sofia.rivero@example.com</email>
+        <fechaNacimiento>1991-09-25</fechaNacimiento>
+        <nacionalidad>Boliviana</nacionalidad>
+        <nombre>Sofía</nombre>
+        <sexo>F</sexo>
+        <telefono>+59170000020</telefono>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointProperties"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#capacidad"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#nombreInfraestructura"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#ubicacion"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#alturaCm"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#apellido"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#documento"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#email"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#fechaNacimiento"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#nacionalidad"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#nombre"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#pesoKg"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#pieHabil"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#sexo"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12/#telefono"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
