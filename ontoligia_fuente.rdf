@@ -8,8 +8,132 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12"/>
     
-
-
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+    
+    <!-- tieneEquipoParticipante -->
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#tieneEquipoParticipante">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#CompeticionNacional"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Club"/>
+    </owl:ObjectProperty>
+    
+    <!-- tieneCampeon -->
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#tieneCampeon">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#CompeticionNacional"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Equipo"/>
+    </owl:ObjectProperty>
+    
+    <!-- organizadaPor -->
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#organizadaPor">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#CompeticionNacional"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Persona"/>
+    </owl:ObjectProperty>
+    
+    <!-- seJuegaEn -->
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#seJuegaEn">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#CompeticionNacional"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Estadio"/>
+    </owl:ObjectProperty>
+    
+    <!-- perteneceAPais -->
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#perteneceAPais">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#CompeticionNacional"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#futbol"/>
+    </owl:ObjectProperty>
+    
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+    
+    <!-- nombreCompeticion -->
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#nombreCompeticion">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#CompeticionNacional"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+    <!-- añoFundacion -->
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#añoFundacion">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#CompeticionNacional"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+    <!-- temporadaActual -->
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#temporadaActual">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#CompeticionNacional"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+    <!-- numeroEquipos -->
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#numeroEquipos">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#CompeticionNacional"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+    <!-- paisOrganizador -->
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#paisOrganizador">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#CompeticionNacional"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+    <!-- numeroJornadas -->
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#numeroJornadas">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Liga"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+    <!-- sistemaCompeticion -->
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#sistemaCompeticion">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Liga"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+    <!-- puntosVictoria -->
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#puntosVictoria">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Liga"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+    <!-- numeroRondas -->
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#numeroRondas">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Copa"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+    <!-- tienePartidoVuelta -->
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#tienePartidoVuelta">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Copa"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+    <!-- sedeFinal -->
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#sedeFinal">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Copa"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -17,32 +141,69 @@
     //
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
-
     
-
-
-    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#deportista -->
-
+    <!-- Clases auxiliares necesarias -->
+    <owl:Class rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Club">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#futbol"/>
+    </owl:Class>
+    
+    <owl:Class rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Equipo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#futbol"/>
+    </owl:Class>
+    
+    <owl:Class rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Persona">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#futbol"/>
+    </owl:Class>
+    
+    <owl:Class rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Estadio">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#futbol"/>
+    </owl:Class>
+    
+    <!-- Competicion -->
+    <owl:Class rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Competicion">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#futbol"/>
+    </owl:Class>
+    
+    <!-- CompeticionNacional -->
+    <owl:Class rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#CompeticionNacional">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Competicion"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#perteneceAPais"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#futbol"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#tieneEquipoParticipante"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Club"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+    <!-- Liga -->
+    <owl:Class rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Liga">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#CompeticionNacional"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Copa"/>
+    </owl:Class>
+    
+    <!-- Copa -->
+    <owl:Class rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#Copa">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#CompeticionNacional"/>
+    </owl:Class>
+    
+    <!-- deportista (ya existía) -->
     <owl:Class rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#deportista">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#futbol"/>
     </owl:Class>
     
-
-
-    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#futbol -->
-
+    <!-- futbol (ya existía) -->
     <owl:Class rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#futbol"/>
     
-
-
-    <!-- http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#reglas -->
-
+    <!-- reglas (ya existía) -->
     <owl:Class rdf:about="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#reglas">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adrian/ontologies/2025/8/untitled-ontology-12#futbol"/>
     </owl:Class>
 </rdf:RDF>
-
-
-
-<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
-
