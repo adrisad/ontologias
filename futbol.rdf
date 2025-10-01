@@ -14,7 +14,6 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
-    // Data properties
     // Object Properties
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -23,20 +22,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#edad -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#edad">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#persona"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#nombre -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#nombre">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#persona"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
     <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#aplicaA -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#aplicaA">
@@ -152,6 +137,80 @@
         <rdfs:domain rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#equipo"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#infraestructura"/>
     </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#apellido -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#apellido">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#persona"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#direccion -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#direccion">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#persona"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#edad -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#edad">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#persona"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#fechaNacimiento -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#fechaNacimiento">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#persona"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#genero -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#genero">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#persona"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#nombre -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#nombre">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#persona"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#telefono -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#telefono">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#persona"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
     
 
 
