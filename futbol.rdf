@@ -13,6 +13,34 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#edad -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#edad">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#persona"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#nombre -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#nombre">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#persona"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Classes
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -371,9 +399,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#seleccionProfecional -->
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#seleccionMayor -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#seleccionProfecional">
+    <owl:Class rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#seleccionMayor">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#seleccion"/>
     </owl:Class>
     
