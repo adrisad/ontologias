@@ -1,0 +1,440 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18/"
+     xml:base="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#arbitro -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#arbitro">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#persona"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#arbitroAsistente -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#arbitroAsistente">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#arbitro"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#arbitroPrincipal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#arbitroPrincipal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#arbitro"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#asistentesTecnicos -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#asistentesTecnicos">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#cuerpoTecnico"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#campoDeJuego -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#campoDeJuego">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#infraestructura"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#campoDeJuegoClub -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#campoDeJuegoClub">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#campoDeJuego"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#campoDeJuegoSeleccion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#campoDeJuegoSeleccion">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#campoDeJuego"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#centroCampista -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#centroCampista">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#jugador"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#club -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#club">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#equipo"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#clubDePrimera -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#clubDePrimera">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#club"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#clubDeSegunda -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#clubDeSegunda">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#club"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#clubJuvenil -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#clubJuvenil">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#club"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#competicion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#competicion"/>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#competicionInternacional -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#competicionInternacional">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#competicion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#competicionNacional -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#competicionNacional">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#competicion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#copa -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#copa">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#competicionNacional"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#cuartoArbitro -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#cuartoArbitro">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#arbitro"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#cuerpoTecnico -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#cuerpoTecnico">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#persona"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#defensa -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#defensa">
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#defensas -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#defensas">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#jugador"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#delanteros -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#delanteros">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#jugador"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#entrenadorPrincipal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#entrenadorPrincipal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#cuerpoTecnico"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#equipamiento -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#equipamiento">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#infraestructura"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#equipamientoClub -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#equipamientoClub">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#equipamiento"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#equipamientoSeleccion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#equipamientoSeleccion">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#equipamiento"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#equipo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#equipo"/>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#estadio -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#estadio">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#infraestructura"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#estadioClub -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#estadioClub">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#estadio"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#estadioSeleccion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#estadioSeleccion">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#estadio"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#infraestructura -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#infraestructura"/>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#jugador -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#jugador">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#persona"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#juvenil -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#juvenil">
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#liga -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#liga">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#competicionNacional"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#mayor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#mayor">
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#medico -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#medico">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#cuerpoTecnico"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#persona -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#persona"/>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#portero -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#portero">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#jugador"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#regla -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#regla"/>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#reglaArbitraje -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#reglaArbitraje">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#regla"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#reglaDiciplinaria -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#reglaDiciplinaria">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#regla"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#reglaEquipamiento -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#reglaEquipamiento">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#regla"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#reglaJuego -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#reglaJuego">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#regla"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#reglaTerreno -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#reglaTerreno">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#regla"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#seleccion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#seleccion">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#equipo"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#seleccionJuvenil -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#seleccionJuvenil">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#seleccion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#seleccionProfecional -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#seleccionProfecional">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#seleccion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#seleccionSub20 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#seleccionSub20">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#seleccion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#servicioClub -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#servicioClub">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#servicios"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#servicioSeleccion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#servicioSeleccion">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#servicios"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#servicios -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#servicios">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#infraestructura"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#sub20 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#sub20">
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#torneoContinental -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#torneoContinental">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#competicionInternacional"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#torneoMundial -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#torneoMundial">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vcdan/ontologies/2025/8/untitled-ontology-18#competicionInternacional"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
